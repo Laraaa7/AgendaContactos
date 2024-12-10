@@ -40,6 +40,7 @@
             this.listViewContactos = new System.Windows.Forms.ListView();
             this.columnaNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTelefono = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -154,12 +155,26 @@
             this.columnaTelefono.Text = "Teléfono";
             this.columnaTelefono.Width = 100;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.LightPink;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLimpiar.Location = new System.Drawing.Point(256, 317);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(94, 26);
+            this.btnLimpiar.TabIndex = 10;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.listViewContactos);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblNombre);
@@ -183,6 +198,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTitulo;

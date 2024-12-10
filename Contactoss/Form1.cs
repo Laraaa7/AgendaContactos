@@ -124,41 +124,51 @@ namespace Contactoss
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            string phone = txtTelefono.Text;
-            string newName = txtNombre.Text;
-
-            if (string.IsNullOrEmpty(phone) || !checkPhone(phone))
+            if (listViewContactos.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Error, introduce un número de teléfono válido");
+                MessageBox.Show("Seleccione un contacto para actualizar");
                 return;
             }
 
-            int index = contacts.FindIndex(c => c.Phone == phone);
+            ListViewItem selectedItem = listViewContactos.SelectedItems[0];
+            string currentName = selectedItem.Text;
+            string currentPhone = selectedItem.SubItems[1].Text;
+            string newName = txtNombre.Text;
+            string newPhone = txtTelefono.Text;
 
-            if (index == -1)
+            if (!checkPhone(newPhone))
             {
-                MessageBox.Show("No se encontró ningún contacto");
+                return;
+            }
+
+            int index = contacts.FindIndex(c => c.Name == currentName && c.Phone == currentPhone);
+
+            if (index != -1)
+            {
+                contacts[index].Name = newName;
+                contacts[index].Phone = newPhone;
+
+                selectedItem.Text = newName;
+                selectedItem.SubItems[1].Text = newPhone;
+
+                MessageBox.Show("Contacto actualizado correctamente");
             }
             else
             {
-                contacts[index].Name = newName;
-
-                foreach (ListViewItem item in listViewContactos.Items)
-                {
-                    if (item.SubItems[1].Text == phone)
-                    {
-                        item.Text = newName;
-                        break;
-                    }
-                }
-                MessageBox.Show("Contacto actualizado correctamente:\nNombre: " + newName + "\nTeléfono: " + phone);
+                MessageBox.Show("No se encontró el contacto");
             }
         }
-
 
         private void listViewContactos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtTelefono.Clear();
+            listViewContactos.SelectedItems.Clear();
         }
     }
 }
