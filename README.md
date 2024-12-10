@@ -12,8 +12,9 @@ Este proyecto es una aplicación de escritorio desarrollada en C# con Windows Fo
 * Buscar contactos: Busca contactos existentes en la lista usando el número de teléfono.
 * Actualizar contactos: Modifica tanto el nombre como el número de teléfono de un contacto existente.
 * Eliminar contactos: Elimina un contacto de la lista utilizando su número de teléfono.
-
+* Limpiar campos: Limpia el campo de nombre y teléfono dejándolos en blanco.
 
 ## Imagen del programa
 
-<img width="444" alt="Captura de pantalla 2024-12-05 161217" src="https://github.com/user-attachments/assets/1f03eb1e-496d-4e75-bb16-ef1906d296e9">
+![image](https://github.com/user-attachments/assets/c2d6a12d-0a51-42aa-89b4-ec50b8b8417b)
+
